@@ -1,5 +1,5 @@
 <?php
-require dirname(__DIR__) . '/core/bootstrap.php';
+require __DIR__ . '/core/bootstrap.php';
 
 $slug = trim((string)($_GET['page'] ?? ''), '/');
 if ($slug === '') {
