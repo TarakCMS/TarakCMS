@@ -19,11 +19,11 @@ $footer = apply_filters('site_footer', '<p>Създадено с TarakCMS</p>');
 <html lang="bg">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php e($title) ?></title>
+<title><?php echo e($title) ?></title>
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-<header class="site-header"><a class="brand" href="/"><?php e($config['app_name'] ?? 'TarakCMS') ?></a><a href="admin.php">Администрация</a></header>
-<main class="content"><h1><?php e($title) ?></h1><article><?php $body ?></article></main>
-<footer class="site-footer"><?php $footer ?></footer>
+<header class="site-header"><a class="brand" href="/"><?php echo e($config['app_name'] ?? 'TarakCMS') ?></a><a href="admin.php">Администрация</a></header>
+<main class="content"><h1><?php echo e($title) ?></h1><article><?php echo $body ?></article></main>
+<footer class="site-footer"><?php echo $footer ?></footer>
 </body></html>
