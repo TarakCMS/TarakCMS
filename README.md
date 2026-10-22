@@ -1,4 +1,4 @@
-# TarıkCMS
+# TarakCMS
 
 Лека PHP CMS с MySQL и плъгин система. Изисква PHP 8.2+, PDO MySQL и MySQL 8/MariaDB.
 

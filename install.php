@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
-$configPath = dirname(__DIR__) . '/config/config.php';
+$configPath = __DIR__ . '/config/config.php';
 if (!is_file($configPath)) exit('Първо създайте config/config.php от config.example.php.');
-require dirname(__DIR__) . '/core/Database.php';
+require __DIR__ . '/core/Database.php';
 $config = require $configPath;
 try {
     $db = Database::connection($config);
-    $schema = file_get_contents(dirname(__DIR__) . '/database/schema.sql');
+    $schema = file_get_contents(__DIR__ . '/database/schema.sql');
     foreach (array_filter(array_map('trim', explode(';', (string)$schema))) as $sql) $db->exec($sql);
 } catch (Throwable $e) {
     http_response_code(500);
@@ -27,4 +27,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } catch (Throwable $e) { $message = 'Неуспешно създаване. Проверете дали потребителят вече съществува.'; }
     }
 }
-?><!doctype html><html lang="bg"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Инсталация TarıkCMS</title><link rel="stylesheet" href="/assets/style.css"><body><main class="login"><p class="eyebrow">INSTALLER</p><h1>Създай администратор</h1><?php if ($message): ?><p><?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?></p><?php endif; ?><form method="post"><label>Потребителско име<input name="username" required minlength="3"></label><label>Имейл<input type="email" name="email" required></label><label>Парола (минимум 12 символа)<input type="password" name="password" required minlength="12"></label><button>СЪЗДАЙ АДМИНИСТРАТОР</button></form></main></body></html>
+?><!doctype html><html lang="bg"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Инсталация TarakCMS</title><link rel="stylesheet" href="/assets/style.css"><body><main class="login"><p class="eyebrow">INSTALLER</p><h1>Създай администратор</h1><?php if ($message): ?><p><?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?></p><?php endif; ?><form method="post"><label>Потребителско име<input name="username" required minlength="3"></label><label>Имейл<input type="email" name="email" required></label><label>Парола (минимум 12 символа)<input type="password" name="password" required minlength="12"></label><button>СЪЗДАЙ АДМИНИСТРАТОР</button></form></main></body></html>
