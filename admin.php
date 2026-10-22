@@ -1,5 +1,5 @@
 <?php
-require dirname(__DIR__) . '/core/bootstrap.php';
+require __DIR__ . '/core/bootstrap.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = (string)($_POST['action'] ?? '');

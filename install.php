@@ -7,10 +7,18 @@ $config = require $configPath;
 try {
     $db = Database::connection($config);
     $schema = file_get_contents(__DIR__ . '/database/schema.sql');
-    foreach (array_filter(array_map('trim', explode(';', (string)$schema))) as $sql) $db->exec($sql);
+
+    foreach (array_filter(array_map('trim', explode(';', (string)$schema))) as $sql) {
+        $sql = preg_replace('/^CREATE TABLE\s+/i', 'CREATE TABLE IF NOT EXISTS ', $sql, 1);
+        $db->exec($sql);
+    }
 } catch (Throwable $e) {
     http_response_code(500);
-    exit('Грешка при настройка на базата. Проверете конфигурацията и SQL правата.');
+    exit(
+        '<pre>Грешка: ' .
+        htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8') .
+        '</pre>'
+    );
 }
 $message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

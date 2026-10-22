@@ -23,7 +23,7 @@ $footer = apply_filters('site_footer', '<p>Създадено с TarakCMS</p>');
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-<header class="site-header"><a class="brand" href="/"><?= e($config['app_name'] ?? 'TarakCMS') ?></a><a href="/admin.php">Администрация</a></header>
+<header class="site-header"><a class="brand" href="/"><?= e($config['app_name'] ?? 'TarakCMS') ?></a><a href="admin.php">Администрация</a></header>
 <main class="content"><h1><?= e($title) ?></h1><article><?= $body ?></article></main>
 <footer class="site-footer"><?= $footer ?></footer>
 </body></html>
