@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if (!is_admin()):
 ?>
 <!doctype html><html lang="bg"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Вход — TarakCMS</title><link rel="stylesheet" href="/assets/style.css"></head>
-<body><main class="login"><p class="eyebrow">TARIKCMS / ADMIN</p><h1>Вход</h1>
+<body><main class="login"><p class="eyebrow">TARAKCMS / ADMIN</p><h1>Вход</h1>
 <?php if (!empty($error)): ?><p class="error"><?php e($error) ?></p><?php endif; ?>
 <form method="post"><input type="hidden" name="action" value="login"><label>Потребителско име<input name="username" required autocomplete="username"></label><label>Парола<input type="password" name="password" required autocomplete="current-password"></label><button>ВЛИЗАНЕ →</button></form>
 <p><a href="/">← Към сайта</a></p></main></body></html>
@@ -53,7 +53,7 @@ if (!is_admin()):
 $tab = (string)($_GET['tab'] ?? 'pages');
 ?>
 <!doctype html><html lang="bg"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Администрация — TarakCMS</title><link rel="stylesheet" href="/assets/style.css"></head>
-<body><div class="admin-shell"><aside class="sidebar"><a class="brand" href="/">TARIKCMS</a><p class="eyebrow">CONTROL PANEL</p><a href="/admin.php?tab=pages">Страници</a><a href="/admin.php?tab=plugins">Плъгини</a><a href="/">Преглед на сайта</a><form method="post"><input type="hidden" name="action" value="logout"><button class="secondary">Изход</button></form></aside>
+<body><div class="admin-shell"><aside class="sidebar"><a class="brand" href="/">TARAKCMS</a><p class="eyebrow">CONTROL PANEL</p><a href="/admin.php?tab=pages">Страници</a><a href="/admin.php?tab=plugins">Плъгини</a><a href="/">Преглед на сайта</a><form method="post"><input type="hidden" name="action" value="logout"><button class="secondary">Изход</button></form></aside>
 <main class="admin-main"><p class="eyebrow">DASHBOARD / <?php echo e(strtoupper($tab)) ?></p><h1><?php $tab === 'plugins' ? 'Плъгини' : 'Страници' ?></h1>
 <?php if (!empty($notice)): ?><p class="notice"><?php echo e($notice) ?></p><?php endif; ?><?php if (!empty($error)): ?><p class="error"><?php echo e($error) ?></p><?php endif; ?>
 <?php if ($tab === 'plugins'): ?>
