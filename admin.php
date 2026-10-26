@@ -5,7 +5,7 @@ require __DIR__ . '/core/bootstrap.php';
 
 /*
 |--------------------------------------------------------------------------
-| TarıkCMS Advanced Admin
+| TARAKCMS Advanced Admin
 |--------------------------------------------------------------------------
 | Existing dependencies:
 | $db, $pluginManager, is_admin(), e()
@@ -345,7 +345,7 @@ if (!is_admin()):
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow">
     <meta name="theme-color" content="#f2f0e9">
-    <title>Вход — TarıkCMS</title>
+    <title>Вход — TARAKCMS</title>
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
@@ -491,7 +491,7 @@ $username = (string) ($_SESSION['username'] ?? 'Admin');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow">
     <meta name="theme-color" content="#111111">
-    <title>Администрация — TarıkCMS</title>
+    <title>Администрация — TARAKCMS</title>
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
@@ -570,7 +570,7 @@ $username = (string) ($_SESSION['username'] ?? 'Admin');
             <h1>Табло<span class="text-accent">.</span></h1>
 
             <p class="admin-description">
-                Център за управление на съдържанието и разширенията на TarıkCMS.
+                Център за управление на съдържанието и разширенията на TARAKCMS.
             </p>
 
             <div class="stats-grid">

@@ -5,7 +5,7 @@ require __DIR__ . '/core/bootstrap.php';
 
 /*
 |--------------------------------------------------------------------------
-| TarıkCMS Public Frontend
+| TARAKCMS Public Frontend
 |--------------------------------------------------------------------------
 | Dependencies:
 | - core/bootstrap.php
@@ -214,10 +214,10 @@ if (!function_exists('cms_safe_html')) {
 
 /* Application settings */
 
-$appName = trim((string) ($config['app_name'] ?? 'TarıkCMS'));
+$appName = trim((string) ($config['app_name'] ?? 'TARAKCMS'));
 
 if ($appName === '') {
-    $appName = 'TarıkCMS';
+    $appName = 'TARAKCMS';
 }
 
 $siteUrl = cms_valid_url(
@@ -226,7 +226,7 @@ $siteUrl = cms_valid_url(
 
 $defaultDescription = (string) (
     $config['meta_description'] ??
-    'Официален сайт, създаден с TarıkCMS.'
+    'Официален сайт, създаден с TARAKCMS.'
 );
 
 $slug = trim((string) ($_GET['page'] ?? ''), '/');
@@ -360,7 +360,7 @@ if ($loadError) {
 } elseif ($page) {
     $body = (string) $page['content'];
 } else {
-    $body = '<h2>Добре дошли в TarıkCMS.</h2>' .
+    $body = '<h2>Добре дошли в TARAKCMS.</h2>' .
         '<p>Влезте в администрацията, за да създадете първата си страница.</p>' .
         '<p><a href="/admin.php">Отвори администрацията →</a></p>';
 }
@@ -383,14 +383,14 @@ try {
 try {
     $footer = (string) apply_filters(
         'site_footer',
-        '<p>Създадено с <a href="/">TarıkCMS</a></p>'
+        '<p>Създадено с <a href="/">TARAKCMS</a></p>'
     );
 
     $footer = cms_safe_html($footer);
 } catch (Throwable $exception) {
     error_log('TARAKCMS footer filter error: ' . $exception->getMessage());
 
-    $footer = 'Създадено с TarıkCMS';
+    $footer = 'Създадено с TARAKCMS';
 }
 
 $year = date('Y');
