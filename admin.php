@@ -326,10 +326,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } catch (LengthException | RuntimeException $exception) {
         $error = $exception->getMessage();
     } catch (PDOException $exception) {
-        error_log('TarikCMS admin database error: ' . $exception->getMessage());
+        error_log('TARAKCMS admin database error: ' . $exception->getMessage());
         $error = 'Грешка при работа с базата данни. Проверете настройките.';
     } catch (Throwable $exception) {
-        error_log('TarikCMS admin error: ' . $exception->getMessage());
+        error_log('TARAKCMS admin error: ' . $exception->getMessage());
         $error = 'Възникна грешка при изпълнение на операцията.';
     }
 }
@@ -350,7 +350,7 @@ if (!is_admin()):
 </head>
 <body>
 <main class="login">
-    <a class="brand" href="/">TARIKCMS</a>
+    <a class="brand" href="/">TARAKCMS</a>
 
     <p class="eyebrow">SECURE ACCESS / 001</p>
     <h1>Вход в системата<span class="text-accent">.</span></h1>
@@ -389,7 +389,7 @@ if (!is_admin()):
     </form>
 
     <p class="login-footer">
-        TARIKCMS / ADMINISTRATION<br>
+        TARAKCMS / ADMINISTRATION<br>
         <a href="/">← Към публичния сайт</a>
     </p>
 </main>
@@ -478,7 +478,7 @@ try {
         $plugins = $pluginManager->discover();
     }
 } catch (Throwable $exception) {
-    error_log('TarikCMS admin load error: ' . $exception->getMessage());
+    error_log('TARAKCMS admin load error: ' . $exception->getMessage());
     $pageError = 'Част от информацията не може да бъде заредена.';
 }
 
@@ -499,7 +499,7 @@ $username = (string) ($_SESSION['username'] ?? 'Admin');
 <div class="admin-shell">
 
     <aside class="sidebar">
-        <a class="brand" href="/admin.php">TARIKCMS</a>
+        <a class="brand" href="/admin.php">TARAKCMS</a>
 
         <p class="eyebrow">CONTROL PANEL / V2</p>
 
@@ -545,7 +545,7 @@ $username = (string) ($_SESSION['username'] ?? 'Admin');
 
         <header class="admin-topbar">
             <div>
-                <p class="eyebrow">TARIKCMS / ADMINISTRATION</p>
+                <p class="eyebrow">TARAKCMS / ADMINISTRATION</p>
                 <p>Здравей, <strong><?= admin_h($username) ?></strong>.</p>
             </div>
 
@@ -936,7 +936,7 @@ $username = (string) ($_SESSION['username'] ?? 'Admin');
 
         <footer style="margin-top:60px;padding-top:20px;border-top:2px solid">
             <small>
-                TARIKCMS / ADMIN PANEL / PHP <?= admin_h(PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION) ?>
+                TARAKCMS / ADMIN PANEL / PHP <?= admin_h(PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION) ?>
             </small>
         </footer>
 

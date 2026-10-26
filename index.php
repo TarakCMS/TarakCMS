@@ -202,7 +202,7 @@ if (!function_exists('cms_safe_html')) {
 
             return $output;
         } catch (Throwable $exception) {
-            error_log('TarikCMS HTML sanitization error: ' . $exception->getMessage());
+            error_log('TARAKCMS HTML sanitization error: ' . $exception->getMessage());
 
             return nl2br(cms_h($html), false);
         } finally {
@@ -304,7 +304,7 @@ try {
 
     $pages = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (Throwable $exception) {
-    error_log('TarikCMS frontend database error: ' . $exception->getMessage());
+    error_log('TARAKCMS frontend database error: ' . $exception->getMessage());
 
     $loadError = true;
     $page = null;
@@ -373,7 +373,7 @@ try {
     $body = (string) apply_filters('page_content', $body, $page);
     $body = cms_safe_html($body);
 } catch (Throwable $exception) {
-    error_log('TarikCMS page_content filter error: ' . $exception->getMessage());
+    error_log('TARAKCMS page_content filter error: ' . $exception->getMessage());
 
     $body = '<p>Възникна грешка при показване на съдържанието.</p>';
 }
@@ -388,7 +388,7 @@ try {
 
     $footer = cms_safe_html($footer);
 } catch (Throwable $exception) {
-    error_log('TarikCMS footer filter error: ' . $exception->getMessage());
+    error_log('TARAKCMS footer filter error: ' . $exception->getMessage());
 
     $footer = 'Създадено с TarıkCMS';
 }
@@ -492,7 +492,7 @@ $year = date('Y');
 <main class="content" id="main-content">
     <div class="content-meta">
         <span class="eyebrow">
-            TARIKCMS / <?= $isHome ? 'HOME' : ($notFound ? '404' : 'PAGE') ?>
+            TARAKCMS / <?= $isHome ? 'HOME' : ($notFound ? '404' : 'PAGE') ?>
         </span>
 
         <?php if ($page): ?>
