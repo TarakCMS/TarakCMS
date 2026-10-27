@@ -1,7 +1,8 @@
 {
-  "name": "Hello Plugin",
-  "slug": "hello",
+  "slug": "hello-world",
+  "name": "Hello World",
   "version": "1.0.0",
-  "description": "Примерен плъгин, който добавя съобщение във footer.",
-  "author": "TarakCMS"
+  "description": "Примерен плъгин за TarıkCMS.",
+  "requires_php": "8.2",
+  "requires_plugins": []
 }
